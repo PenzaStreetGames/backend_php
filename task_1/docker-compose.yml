@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   db:
-    build: ./mariadb
+    image: mariadb
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
@@ -16,3 +16,5 @@ services:
       - ./apache:/usr/local/apache2/htdocs/
     ports:
       - "8081:80"
+    depends_on:
+      - db
