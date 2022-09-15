@@ -7,10 +7,6 @@
 </head>
 <body>
 <h1>Рисовашки</h1>
-<p>Задайте число от 0 до 127 в параметре, чтобы нарисовать фигуру</p>
-<pre>
-    http:localhost:8080/drawer.php?num=...
-</pre>
 <?php
 if (isset($_GET['num'])) {
     /*

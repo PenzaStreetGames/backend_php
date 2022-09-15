@@ -46,7 +46,7 @@ if (isset($_GET['array'])) {
 } else {
     echo "<p>Задайте числа, разделённые запятыми в параметре array, чтобы отсортировать их</p>
 <pre>
-    http:localhost:8080/drawer.php?array=4,2,5, ...
+    http:localhost:8080/sort.php?array=4,2,5,...
 </pre>";
 }
 ?>
