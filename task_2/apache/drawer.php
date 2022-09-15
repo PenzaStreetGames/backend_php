@@ -48,7 +48,6 @@ if (isset($_GET['num'])) {
     http:localhost:8080/drawer.php?num=...
 </pre>";
 }
-
 ?>
 </body>
 </html>
