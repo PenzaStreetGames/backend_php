@@ -1,0 +1,18 @@
+version: "3"
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mariadb:/docker-entrypoint-initdb.d:ro
+  server:
+    build: ./apache
+    restart: always
+    volumes:
+      - ./apache:/var/www/html/
+    ports:
+      - "8081:80"
