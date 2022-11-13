@@ -11,11 +11,11 @@ RUN docker-php-ext-install mysqli && \
     apt-get update && \
     apt-get install -y libaprutil1-dbd-mysql && \
     apt-get install -y git && \
-    apt-get install -y libpng-dev # &&
+    apt-get install -y libpng-dev && \
+    apt-get install -y zip unzip && \
+    docker-php-ext-install gd
 COPY ./content/composer.json ./
-RUN apt-get install -y zip unzip && \
-    docker-php-ext-install gd && \
-    composer update && \
+RUN composer update && \
     composer install && \
     service apache2 restart
 #RUN apt-get install -y libmcrypt-dev && \
