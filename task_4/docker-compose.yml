@@ -24,6 +24,7 @@ services:
     restart: always
     volumes:
       - ./apache/content:/var/www/html/
+      - ./apache/php.ini:/usr/local/etc/php/conf.d/php.ini
       - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - "8081:80"
