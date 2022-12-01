@@ -1,0 +1,17 @@
+{
+  "require": {
+    "yiisoft/yii2-faker": "~2.0.0",
+    "amenadiel/jpgraph": "^4.0.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  }
+}
