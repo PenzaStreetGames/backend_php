@@ -1,6 +1,3 @@
-<?php
-require "session.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +21,6 @@ require "session.php";
 </ol>
 <a href="../../index.php">На главную</a>
 <br>
-<a href="admin/admin.php">Админам сюда</a>
+<a href="../../admin/AdminView.php">Админам сюда</a>
 </body>
 </html>

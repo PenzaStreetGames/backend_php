@@ -10,11 +10,13 @@ class Route
 
         if ( !empty($routes[1]) )
         {
-            $controller_name = $routes[1];
+
+            $controller_name = ucfirst($routes[1]);
         }
 
         if ( !empty($routes[2]) )
         {
+            $routes[2] = explode('?', $routes[2])[0];
             $action_name = $routes[2];
         }
 
