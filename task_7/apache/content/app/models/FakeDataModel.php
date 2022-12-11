@@ -3,7 +3,7 @@ require_once "app/models/FakeDataInstance.php";
 
 class FakeDataModel extends Model {
 
-    static $jsonPath = 'json/results.json';
+    static $jsonPath = 'resources/json/results.json';
 
     function getData()
     {

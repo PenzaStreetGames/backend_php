@@ -56,7 +56,7 @@ class Route
     static function ErrorPage404()
     {
         header("NotFoundPage: ".$_SERVER['REQUEST_URI']);
-        $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
+        $host = 'http://localhost:8080/';
         header('HTTP/1.1 404 Not Found');
         header("Status: 404 Not Found");
         header('Location:'.$host.'NotFound');

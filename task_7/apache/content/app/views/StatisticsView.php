@@ -1,6 +1,6 @@
-<img src="images/plot_pie.png" alt="plot_1.png">
-<img src="images/plot_bar.png" alt="plot_2.png">
-<img src="images/plot_scatter.png" alt="plot_3.png">
+<img src="resources/images/plot_pie.png" alt="plot_1.png">
+<img src="resources/images/plot_bar.png" alt="plot_2.png">
+<img src="resources/images/plot_scatter.png" alt="plot_3.png">
 
 <table class="table">
     <tr>

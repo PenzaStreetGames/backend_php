@@ -5,7 +5,7 @@ use Amenadiel\JpGraph\Graph;
 use Amenadiel\JpGraph\Plot;
 
 class FakePlotModel extends Model {
-    static $imageFolder = "../../images/";
+    static $imageFolder = "resources/images";
 
     function draw_plot_bar($bloodTypeCount)
     {
@@ -28,7 +28,7 @@ class FakePlotModel extends Model {
         $b1 = new Plot\BarPlot($databary);
         $b1->SetLegend($_GET['property']);
         $graph->Add($b1);
-        $graph->Stroke('images/plot_bar.png');
+        $graph->Stroke(self::$imageFolder.'/plot_bar.png');
     }
 
     function draw_plot_pie($dayCount)
@@ -47,7 +47,7 @@ class FakePlotModel extends Model {
         $p1->SetColor('black');
         $p1->SetLabels($labels);
         $graph->Add($p1);
-        $graph->Stroke("images/plot_pie.png");
+        $graph->Stroke(self::$imageFolder.'/plot_pie.png');
     }
 
     function draw_plot_scatter($dayBloodTuple)
@@ -74,6 +74,6 @@ class FakePlotModel extends Model {
         $sp1->mark->SetWidth(8);
 
         $graph->Add($sp1);
-        $graph->Stroke("images/plot_scatter.png");
+        $graph->Stroke(self::$imageFolder.'/plot_scatter.png');
     }
 }

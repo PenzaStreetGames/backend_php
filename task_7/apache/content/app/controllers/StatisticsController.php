@@ -26,8 +26,8 @@ class StatisticsController extends Controller {
         $this->fakePlotModel->draw_plot_pie($dayCount);
         $this->fakePlotModel->draw_plot_bar($bloodTypeCount);
         $this->fakePlotModel->draw_plot_scatter($dayBloodType);
-//
-        $images = array("images/plot_pie.png", "images/plot_bar.png", "images/plot_scatter.png");
+
+        $images = array("plot_pie.png", "plot_bar.png", "plot_scatter.png");
         foreach ($images as $image) {
             $this->watermarkModel->addWatermark($image);
         }

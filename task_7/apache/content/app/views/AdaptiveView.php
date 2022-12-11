@@ -14,5 +14,5 @@
     include "adaptiveView/AdaptiveViewEn.php"
     ?>
 <?php endif ?>
-<script src="js/cookies.js"></script>
+<script src="resources/js/cookies.js"></script>
 </html>

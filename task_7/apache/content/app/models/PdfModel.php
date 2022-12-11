@@ -2,14 +2,14 @@
 class PdfModel extends Model {
     public function getFiles(): bool|array
     {
-        $files = scandir('./pdf_files');
+        $files = scandir('resources/pdf_files');
         # $files = array_filter($files, static function ($item) { return $item != "." and $item != ".."; });
         return $files;
     }
 
     public function uploadFile(): string
     {
-        $uploaddir = 'pdf_files/';
+        $uploaddir = 'resources/pdf_files/';
         $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
         setlocale(LC_ALL, 'en_US.UTF-8');

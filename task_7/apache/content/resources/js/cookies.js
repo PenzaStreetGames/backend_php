@@ -1,8 +1,8 @@
 const theme_btn = document.querySelector(".theme-toggle");
 let currentTheme = getCookie("theme");
 const stylesheetLink = document.querySelector("#theme-link")
-const lightThemeLink = "css/light_theme.css"
-const darkThemeLink = "css/dark_theme.css"
+const lightThemeLink = "resources/css/light_theme.css"
+const darkThemeLink = "resources/css/dark_theme.css"
 
 const lang_btn = document.querySelector(".lang-toggle");
 let currentLanguage = getCookie("lang");

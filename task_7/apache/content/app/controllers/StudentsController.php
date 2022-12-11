@@ -9,7 +9,6 @@ class StudentsController extends Controller
     function __construct()
     {
         parent::__construct();
-        $this->db = new Database();
         $this->model = new StudentsModel($this->db->getConnection());
     }
 
