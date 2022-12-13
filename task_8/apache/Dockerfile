@@ -20,3 +20,4 @@ RUN apt-get install -y libfreetype6-dev && \
 COPY ./content/composer.json ./
 RUN composer update && \
     composer install
+RUN docker-php-ext-install mysqli pdo pdo_mysql

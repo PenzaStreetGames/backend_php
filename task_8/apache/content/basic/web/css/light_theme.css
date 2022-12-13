@@ -1,0 +1,17 @@
+body {
+    --text-color: #222;
+    --bkg-color: #fff;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: var(--bkg-color);
+}
+
+h1,
+p, label {
+    color: var(--text-color);
+}
