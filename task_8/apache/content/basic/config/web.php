@@ -52,7 +52,9 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'students'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'adaptive']
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'adaptive'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'statistics'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'pdf']
             ],
         ],
         'session' => [
@@ -73,7 +75,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1', 'nginx', '172.18.0.4', '172.18.0.1', '172.18.0.5'],
+        'allowedIPs' => ['127.0.0.1', '::1', '172.18.0.*'],
     ];
 
     $config['bootstrap'][] = 'gii';

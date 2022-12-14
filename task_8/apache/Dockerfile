@@ -17,7 +17,8 @@ RUN docker-php-ext-install mysqli && \
 RUN apt-get install -y libfreetype6-dev && \
     docker-php-ext-install gd && \
     docker-php-ext-configure gd --enable-gd --with-freetype
-COPY ./content/composer.json ./
+COPY ./content/composer.json ./content/images ./
 RUN composer update && \
     composer install
 RUN docker-php-ext-install mysqli pdo pdo_mysql
+RUN chown -R daemon:daemon /var/www/html

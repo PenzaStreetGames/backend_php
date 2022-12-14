@@ -1,9 +1,11 @@
 <?php
-class WatermarkModel extends Model {
+namespace app\models;
 
-    private static string $imageFolder = "resources/images/";
+class WatermarkModel {
 
-    function addWatermark($image)
+    private static string $imageFolder = "/var/www/html/basic/web/images/";
+
+    function addWatermark($image): void
     {
         $image1 = self::$imageFolder.$image;
         $image2 = self::$imageFolder.'watermark.png';

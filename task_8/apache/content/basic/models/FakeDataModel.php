@@ -1,7 +1,12 @@
 <?php
-require_once "app/models/FakeDataInstance.php";
 
-class FakeDataModel extends Model {
+namespace app\models;
+
+use app\models\FakeDataInstance;
+use Faker\Factory;
+use Faker\Provider;
+
+class FakeDataModel {
 
     static $jsonPath = 'results.json';
 
@@ -13,9 +18,9 @@ class FakeDataModel extends Model {
     function generateData()
     {
         $data = array();
-        $faker = Faker\Factory::create();
-        $faker->addProvider(new Faker\Provider\ru_RU\Person($faker));
-        $faker->addProvider(new Faker\Provider\ru_RU\Color($faker));
+        $faker = Factory::create();
+        $faker->addProvider(new Provider\ru_RU\Person($faker));
+        $faker->addProvider(new Provider\ru_RU\Color($faker));
         for ($i = 0; $i < 50; $i++) {
             $data_row = new FakeDataInstance(
                 $faker->name(),
@@ -29,13 +34,7 @@ class FakeDataModel extends Model {
             );
             $data[] = $data_row;
         }
-        $jsonData = json_encode($data);
-        file_put_contents(self::$jsonPath, $jsonData);
-    }
-
-    function getRawData(): array {
-        $input = file_get_contents(self::$jsonPath);
-        return json_decode($input);
+        return $data;
     }
 
     function getDayCount($data): array
@@ -64,13 +63,12 @@ class FakeDataModel extends Model {
         return $this->getLabelsAndValues($blood_type_count);
     }
 
-    function getXYTuple(): array {
-        $data = $this->getRawData();
+    function getXYTuple($data): array {
         $x = array();
         $y = array();
         foreach ($data as $row) {
-            $day_array[] = $row["random_x"];
-            $blood_array[] = $row["random_y"];
+            $x[] = $row->random_x;
+            $y[] = $row->random_y;
         }
         return array(
             "x" => $x,

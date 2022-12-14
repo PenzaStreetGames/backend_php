@@ -1,11 +1,11 @@
 <?php
-require_once 'vendor/autoload.php';
+namespace app\models;
 
 use Amenadiel\JpGraph\Graph;
 use Amenadiel\JpGraph\Plot;
 
-class FakePlotModel extends Model {
-    static $imageFolder = "resources/images";
+class FakePlotModel {
+    static $imageFolder = "/var/www/html/basic/web/images";
 
     function draw_plot_bar($bloodTypeCount)
     {
@@ -23,10 +23,7 @@ class FakePlotModel extends Model {
         $databary = $values;
         $graph->SetScale('textlin');
         $graph->xaxis->SetTickLabels($labels);
-        $graph->title->Set($_GET['property']);
-        $graph->title->SetFont(FF_FONT1, FS_BOLD);
         $b1 = new Plot\BarPlot($databary);
-        $b1->SetLegend($_GET['property']);
         $graph->Add($b1);
         $graph->Stroke(self::$imageFolder.'/plot_bar.png');
     }
@@ -53,8 +50,8 @@ class FakePlotModel extends Model {
     function draw_plot_scatter($dayBloodTuple)
     {
         $data = $dayBloodTuple;
-        $datax = $data["day"];
-        $datay = $data["blood"];
+        $datax = $data["x"];
+        $datay = $data["y"];
 
         $__width = 400;
         $__height = 300;
