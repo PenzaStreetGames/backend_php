@@ -13,12 +13,9 @@ RUN docker-php-ext-install mysqli && \
     apt-get install -y git && \
     apt-get install -y libpng-dev && \
     apt-get install -y zip unzip && \
-    a2enmod rewrite
-RUN apt-get install -y libfreetype6-dev && \
+    a2enmod rewrite && \
+    apt-get install -y libfreetype6-dev && \
     docker-php-ext-install gd && \
-    docker-php-ext-configure gd --enable-gd --with-freetype
-COPY ./content/composer.json ./content/images ./
-RUN composer update && \
-    composer install
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+    docker-php-ext-configure gd --enable-gd --with-freetype && \
+    docker-php-ext-install pdo pdo_mysql
 RUN chown -R daemon:daemon /var/www/html
